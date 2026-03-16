@@ -1,4 +1,5 @@
-# 4-BIT-RIPPLE-COUNTER
+
+# EXP12: 4 BIT RIPPLE COUNTER
 
 **AIM:**
 
@@ -24,38 +25,31 @@ In timing diagram Q0 is changing as soon as the negative edge of clock pulse is 
 
 **Procedure**
 
-/* write all the steps invloved */
-```
-1.Open quartus II and create New project wizard.
- 2. Write the program in Verilog HDL file and run the program.
- 3. Download the RTL viewer
- 4. Now open university program VWF and download waveform after the execution.
-```
+1.Type the program in Quartus software.
+
+2.Compile and run the program.
+
+3.Generate the RTL schematic and save the logic diagram.
+
+4.Create nodes for inputs and outputs to generate the timing diagram.
+
+5.For different input combinations generate the timing diagram.
+
 
 **PROGRAM**
 
-/* Program for 4 Bit Ripple Counter and verify its truth table in quartus using Verilog programming.
-
- Developed by:ARSHATH HUSSAIN.I RegisterNumber:21224230022
-*/
-![435462968-a2960aee-c520-4add-b4ee-1755f0030a54](https://github.com/user-attachments/assets/c9dfcdbb-7eaf-414f-ad55-d8285fa3eafa)
-
-endmodule // Full Adder Module module full_adder ( input A, B, Cin, // Inputs: A, B, and Carry-in output Sum, Cout // Outputs: Sum and Carry-out );
-
-![435462987-563a8ca9-6c57-49c9-a4e7-d568a379cb53](https://github.com/user-attachments/assets/c2872474-0115-4f04-b60d-561363e50b64)
-
-end module
+![exp 12 code](https://github.com/user-attachments/assets/d476a7ec-3680-4e51-b8e5-76de822c718b)
 
 
 **RTL LOGIC FOR 4 Bit Ripple Counter**
 
-![435463056-67b5c71b-2efc-4c1c-8a2e-8866bef2a283](https://github.com/user-attachments/assets/efe5e77b-c18a-465d-8e57-fbb19ea6d3ac)
+![exp 12 rtl logic](https://github.com/user-attachments/assets/8639bea2-d828-438a-a72f-88ecac932885)
 
+
+ 
 **TIMING DIGRAMS FOR 4 Bit Ripple Counter**
 
-![435463065-ad5f42e7-8ebb-4579-800c-d3c35725303f](https://github.com/user-attachments/assets/8b50b669-8d93-4eba-aaec-d48185001443)
-
+![exp 12 timing diagrams](https://github.com/user-attachments/assets/1479114c-47d2-4562-94f5-34d24cfc0ce5)
 
 **RESULTS**
-
-Thus the 4 Bit Ripple Counter is executed using verilog and verified with its Truth table.
+THUS THE 4 BIT RIPPLE COUNTER IS STUDIED AND EXECUTED SUCCESSFULLY
