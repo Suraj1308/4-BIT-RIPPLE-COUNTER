@@ -1,5 +1,4 @@
-
-# EXP12: 4 BIT RIPPLE COUNTER
+# 4-BIT-RIPPLE-COUNTER
 
 **AIM:**
 
@@ -25,32 +24,54 @@ In timing diagram Q0 is changing as soon as the negative edge of clock pulse is 
 
 **Procedure**
 
-1.Type the program in Quartus software.
-
-2.Compile and run the program.
-
-3.Generate the RTL schematic and save the logic diagram.
-
-4.Create nodes for inputs and outputs to generate the timing diagram.
-
-5.For different input combinations generate the timing diagram.
-
+/* write all the steps invloved */
 
 **PROGRAM**
 
-![exp 12 code](https://github.com/user-attachments/assets/d476a7ec-3680-4e51-b8e5-76de822c718b)
+/* Program for 4 Bit Ripple Counter and verify its truth table in quartus using Verilog programming.
+~~~`
+module de12(
+   input  wire clk,      
+   input  wire reset_n,  
+   output reg  [3:0] q   
+);
 
 
+   always @(negedge clk or negedge reset_n) begin
+       if (!reset_n)
+           q[0] <= 1'b0;
+       else
+           q[0] <= ~q[0];
+   end
+always @(negedge q[0] or negedge reset_n) begin
+       if (!reset_n)
+           q[1] <= 1'b0;
+       else
+           q[1] <= ~q[1];
+   end
+
+
+   always @(negedge q[1] or negedge reset_n) begin
+       if (!reset_n)
+           q[2] <= 1'b0;
+       else
+           q[2] <= ~q[2];
+   end
+
+
+   always @(negedge q[2] or negedge reset_n) begin   if (!reset_n)
+           q[3] <= 1'b0;
+       else
+           q[3] <= ~q[3];
+   end
+
+endmodule
+~~~
 **RTL LOGIC FOR 4 Bit Ripple Counter**
+<img width="1487" height="581" alt="image" src="https://github.com/user-attachments/assets/61f6d043-88a7-4891-ad0e-898dca6f9e86" />
 
-![exp 12 rtl logic](https://github.com/user-attachments/assets/8639bea2-d828-438a-a72f-88ecac932885)
-
-
- 
 **TIMING DIGRAMS FOR 4 Bit Ripple Counter**
-
-![WhatsApp Image 2026-03-16 at 10 41 43 PM](https://github.com/user-attachments/assets/42e3c3fe-934f-4380-ae63-4f808166d8c6)
-
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/2d4ea621-9ca2-4a9f-8dbf-fff30a33b18c" />
 
 **RESULTS**
-THUS THE 4 BIT RIPPLE COUNTER IS STUDIED AND EXECUTED SUCCESSFULLY
+Thus implementing 4 Bit Ripple Counter using Verilog and validating their functionality using their functional tables is done successfully.
