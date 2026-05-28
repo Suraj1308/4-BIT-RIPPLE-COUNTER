@@ -1,77 +1,41 @@
-# 4-BIT-RIPPLE-COUNTER
+## MODELLING AND SIMULATION OF 1kW SOLAR PHOTOVOLTAIC ARRAY
 
-**AIM:**
+## AIM:
 
-To implement  4 Bit Ripple Counter using verilog and validating their functionality using their functional tables
+To model and design a 1kW solar photovoltaic system using MATLAB Simulation and obtain the current, voltage, power values and solar PV characteristics curves. 
 
-**SOFTWARE REQUIRED:**
+## APPARATUS REQUIRED:
+ MATLAB 2021 or above 
+ 
+## Theory:
+The theory of solar cells explains the process by which light energy in photons is converted into electric current when the photons strike a suitable semiconductor device. The theoretical studies are of practical use because they predict the fundamental limits of a solar cell, and give guidance on the phenomena that contribute to losses and solar cell efficiency. Photons in sunlight hit the solar panel and are absorbed by semi-conducting materials. Electrons (negatively charged) are knocked loose from their atoms as they are excited. Due to their special structure and the materials in solar cells, the electrons are only allowed to move in a single direction. The electronic structure of the materials is very important for the process to work, and often silicon incorporating small amounts of boron or phosphorus is used in different layers. An array of solar cells converts solar energy into a usable amount of direct current (DC) electricity. The photon can pass straight through the silicon — this (generally) happens for lower energy photons. The photon can reflect off the surface. The photon can be absorbed by the silicon if the photon energy is higher than the silicon band gap value. This generates an electron-hole pair and sometimes heat depending on the band structure. 
 
-Quartus prime
-
-**THEORY**
-
-**4 Bit Ripple Counter**
-
-A binary ripple counter consists of a series connection of complementing flip-flops (T or JK type), with the output of each flip-flop connected to the Clock Pulse input of the next higher-order flip-flop. The flip-flop holding the least significant bit receives the incoming count pulses. The diagram of a 4-bit binary ripple counter is shown in Fig. below.
-
-![image](https://github.com/naavaneetha/4-BIT-RIPPLE-COUNTER/assets/154305477/cb4b74d4-31ab-4359-95d0-d22e67daba13)
-
-In timing diagram Q0 is changing as soon as the negative edge of clock pulse is encountered, Q1 is changing when negative edge of Q0 is encountered(because Q0 is like clock pulse for second flip flop) and so on.
-
-![image](https://github.com/naavaneetha/4-BIT-RIPPLE-COUNTER/assets/154305477/a573a7d6-014e-4e54-93e6-e2ac9530960b)
-
-![image](https://github.com/naavaneetha/4-BIT-RIPPLE-COUNTER/assets/154305477/85e1958a-2fc1-49bb-9a9f-d58ccbf3663c)
-
-**Procedure**
-
-/* write all the steps invloved */
-
-**PROGRAM**
-
-/* Program for 4 Bit Ripple Counter and verify its truth table in quartus using Verilog programming.
-~~~`
-module de12(
-   input  wire clk,      
-   input  wire reset_n,  
-   output reg  [3:0] q   
-);
+<img width="481" height="305" alt="image" src="https://github.com/user-attachments/assets/7e841c5a-c9b2-46e5-a49c-8ef9d309a420" />
 
 
-   always @(negedge clk or negedge reset_n) begin
-       if (!reset_n)
-           q[0] <= 1'b0;
-       else
-           q[0] <= ~q[0];
-   end
-always @(negedge q[0] or negedge reset_n) begin
-       if (!reset_n)
-           q[1] <= 1'b0;
-       else
-           q[1] <= ~q[1];
-   end
+## CIRCUIT DIAGRAM:
+
+<img width="726" height="541" alt="Screenshot 2026-05-27 155801" src="https://github.com/user-attachments/assets/58cf5348-870c-4051-87da-1dfeeb53b233" />
 
 
-   always @(negedge q[1] or negedge reset_n) begin
-       if (!reset_n)
-           q[2] <= 1'b0;
-       else
-           q[2] <= ~q[2];
-   end
+## Procedure:
+1. Open MATLAB
+2.  From Simulink library browser, pick the following components a. solar cell b. constant c. PS converter, S converter d. Current sensor, voltage sensor e. Variable resistor f. Ramp g. Scope, XY graph
+4.  Connect the thirty-six solar cells in series with common irradiation and make it as a subsystem to form a panel.
+5.  Form similar six panel and connect them in series to form an array with single irradiance input.
+6.  Create a subsystem for the six panels.
+7.  Connect the constant block with a value of 687 to the irradiance input through PS converter.
+8.  From the output of the solar array connect a current sensor in series to the positive terminal and voltage sensor across the terminals.
+9.  Connect a variable resistor across the solar pv array terminal.
+10.  Connect a ramp signal to the variable resistor through the PS connector.
+11. Using Simulink converter, connect the terminals of the current sensor and voltage sensor to the scope to record the graph.
+12. Use divide block and convert to multiplication operation and multiply the current and voltage outputs to get the power output.
+13. Set the minimum and maximum range in X-Y graph to obtain the IV and PV characteristics.
+
+## OUTPUT:
+<img width="702" height="623" alt="image" src="https://github.com/user-attachments/assets/cd89a5b4-dab8-4d37-8be0-49c961c07d96" />
 
 
-   always @(negedge q[2] or negedge reset_n) begin   if (!reset_n)
-           q[3] <= 1'b0;
-       else
-           q[3] <= ~q[3];
-   end
-
-endmodule
-~~~
-**RTL LOGIC FOR 4 Bit Ripple Counter**
-<img width="1487" height="581" alt="image" src="https://github.com/user-attachments/assets/61f6d043-88a7-4891-ad0e-898dca6f9e86" />
-
-**TIMING DIGRAMS FOR 4 Bit Ripple Counter**
-<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/2d4ea621-9ca2-4a9f-8dbf-fff30a33b18c" />
-
-**RESULTS**
-Thus implementing 4 Bit Ripple Counter using Verilog and validating their functionality using their functional tables is done successfully.
+## RESULT: 
+Thus, the solar PV energy system is simulated using MATLAB and the I-V and P-V graphs are determined for the given panel rating.
+    
